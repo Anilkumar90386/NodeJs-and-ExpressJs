@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 1rem;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .navbar .toggle-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .navbar .toggle-menu span {
+            background-color: white;
+            height: 2px;
+            width: 25px;
+            margin: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar .menu.active {
+                display: flex;
+            }
+
+            .navbar .toggle-menu {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">
+            <a href="#">Brand</a>
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="toggle-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <script>
+        document.querySelector('.toggle-menu').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
